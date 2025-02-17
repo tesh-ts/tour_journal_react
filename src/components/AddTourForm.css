@@ -1,0 +1,27 @@
+.tour-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin: auto;
+  }
+  
+  .tour-form input,
+  .tour-form textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .tour-form button {
+    background-color: #606c38;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .tour-form button:hover {
+    background-color: #b32d00;
+  }
+  

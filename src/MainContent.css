@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+.main{
+    padding-top: 2rem;
+    background-color: #fefae0;
+}
+html{
+    background-color: #fefae0;
+}
+form{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+.hr-dashed {
+	padding: 0;
+	height: 20px;
+	border: none;
+	color: #333;
+	background-image: linear-gradient(currentColor, currentColor 33.33%, transparent 33.33%, transparent 100%);
+	background-size: 100% 3px;
+}
