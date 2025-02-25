@@ -9,7 +9,7 @@
     "dev": "concurrently \"npm run client\" \"npm run server\"",
     "build": "vite build",
     "preview": "vite preview",
-    "start": "start.bat"
+    "start": "sh start.sh"
   },
   "dependencies": {
     "bcryptjs": "^3.0.2",
