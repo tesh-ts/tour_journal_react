@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "commonjs",
   "scripts": {
-    "client": "vite",
+    "client": "npx vite",
     "server": "cd server && node server.js",
     "dev": "concurrently \"npm run client\" \"npm run server\"",
     "build": "vite build",
