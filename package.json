@@ -4,10 +4,13 @@
   "version": "0.0.0",
   "type": "commonjs",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
+  "client": "vite",
+  "server": "cd server && node server.js",
+  "dev": "concurrently \"npm run client\" \"npm run server\"",
+  "build": "vite build",
+  "preview": "vite preview"
+},
+
   "dependencies": {
     "bcryptjs": "^3.0.2",
     "cors": "^2.8.5",
@@ -23,6 +26,7 @@
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^2.0.0",
+    "concurrently": "^9.1.2",
     "vite": "^3.0.0"
   }
 }
