@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import "./MainContent.css";
 import Card from "./Card";
-import Nav from "./Nav";
 import AddTourForm from "./components/AddTourForm";
 import { fetchTours } from "./api";
+import { AuthContext } from "./AuthContext"; // Импортируем контекст
 
 export default function MainContent() {
   const [tours, setTours] = useState([]);
+  const { user } = useContext(AuthContext); // Получаем текущего пользователя из контекста
 
   useEffect(() => {
     fetchTours().then(setTours);
@@ -16,16 +17,22 @@ export default function MainContent() {
     fetchTours().then(setTours);
   };
 
+  const handleTourDeleted = (id) => {
+    setTours((prevTours) => prevTours.filter((tour) => tour.id !== id));
+  };
+
   return (
     <>
-    
-      <Nav />
       <AddTourForm onTourAdded={handleTourAdded} />
-      <hr class="hr-dashed">
-      </hr>
+      <hr className="hr-dashed" />
       <div className="main">
-        {tours.map((x) => (
-          <Card key={x.title} {...x} />
+        {tours.map((tour) => (
+          <Card
+          key={tour.id}
+          {...tour}
+          onDelete={user ? handleTourDeleted : null} // Если есть пользователь, передаем onDelete, если нет - null
+        />
+        
         ))}
       </div>
     </>

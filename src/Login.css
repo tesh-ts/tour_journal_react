@@ -1,0 +1,9 @@
+/* Стиль для центрирования блока */
+.centered-div {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 10px;
+    height: 100vh; /* Вытягивает блок на всю высоту экрана */
+  }
+  

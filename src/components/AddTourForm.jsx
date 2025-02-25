@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import "./AddTourForm.css";
-
-
+import { AuthContext } from "../AuthContext";
 export default function AddTourForm({ onTourAdded }) {
+  const { user } = useContext(AuthContext);
   const [tour, setTour] = useState({
     title: "",
     location: "",
@@ -37,6 +37,11 @@ export default function AddTourForm({ onTourAdded }) {
       });
     }
   };
+
+  // Отображаем форму, только если пользователь авторизован
+  if (!user) {
+    return <div style={{ margin: "1rem", textAlign: "center" }}> Пожалуйста, авторизуйтесь, чтобы добавить тур.</div>;
+  }
 
   return (
     <form className="tour-form" onSubmit={handleSubmit}>
